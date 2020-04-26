@@ -4,8 +4,8 @@
   "description": "Node js web server serving data into templates from json file",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/dieguiviti/pure-node-farm/issues"
   },
-  "homepage": "https://github.com/dieguiviti/pure-node-farm#readme"
+  "homepage": "https://github.com/dieguiviti/pure-node-farm#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  },
+  "dependencies": {}
 }

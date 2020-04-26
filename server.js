@@ -6,6 +6,7 @@ const HTTP = require('http');
 const URL = require('url');
 // HTML producer
 const PRODUCE_HTML = require('./modules/produceHtml');
+const SLUGIFY = require('./modules/slugify');
 
 // Read api data synchronously
 const API_DATA = FS.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
@@ -25,6 +26,9 @@ const PRODUCT_TEMPLATE = FS.readFileSync(
   `${__dirname}/templates/product-template.html`,
   'utf8'
 );
+
+// slugs
+const SLUGS = API_DATA_OBJ.map((product) => SLUGIFY(product.productName));
 
 // Create local http server with routing
 const SERVER = HTTP.createServer((req, res) => {
